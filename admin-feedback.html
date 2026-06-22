@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachivalayam Feedback Dashboard</title>
+</head>
+<body>
+  <!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Feedback Dashboard</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+    background:white;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:15px;
+    text-align:left;
+}
+
+th{
+    background:#004080;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f5f5f5;
+}
+
+.table-container{
+    max-height:600px;
+    overflow-y:auto;
+    margin-top:20px;
+    border:1px solid #ddd;
+}
+
+#feedbackSearch{
+
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    margin-bottom:20px;
+    font-size:16px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+
+<h1>Sachivalayam Feedback Dashboard</h1>
+
+
+</header>
+
+<section class="contact-section">
+
+<h2>Citizen Feedback Records</h2>
+
+<input
+type="text"
+id="feedbackSearch"
+placeholder="Search Feedback..."
+>
+
+<div class="table-container">
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+        </tr>
+
+    </thead>
+
+    <tbody id="feedbackBody">
+
+    </tbody>
+
+</table>
+</div>
+</section>
+
+<script type="module" src="js/admin-feedback.js"></script>
+
+</body>
+</html>
+
+</body>
+</html>
