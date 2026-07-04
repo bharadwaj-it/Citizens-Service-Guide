@@ -129,9 +129,7 @@ It is not an official government document.
         ⬇ Download Image
     </a>
 
-    <a href="javascript:history.back()">
-        ← Back
-    </a>
+    <a id="backBtn">← Back</a>
 
 </div>
 
@@ -145,6 +143,8 @@ const image = params.get("image");
 
 const title = params.get("title");
 
+const service = params.get("service");
+
 if(image && title){
 
     document.getElementById("docTitle").textContent = title;
@@ -152,6 +152,9 @@ if(image && title){
     document.getElementById("docImage").src = image;
 
     document.getElementById("downloadBtn").href = image;
+
+    document.getElementById("backBtn").href =
+    `services-details.html?id=${service}`;
 
 }else{
 

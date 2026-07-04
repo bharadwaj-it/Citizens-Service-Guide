@@ -767,7 +767,7 @@ docsHTML += `
     >
 
     <a
-        href="document-viewer.html?image=${encodeURIComponent(service.documentImages[index])}&title=${encodeURIComponent(doc)}"
+        href="document-viewer.html?image=${encodeURIComponent(service.documentImages[index])}&title=${encodeURIComponent(doc)}&service=${serviceId}"
         target="_blank"
         class="document-link"
     >
