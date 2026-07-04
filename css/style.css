@@ -1787,3 +1787,11 @@ footer p{
     font-weight:bold;
 
 }
+
+.image-box img{
+    max-width:450px;
+    width:100%;
+    height:auto;
+    display:block;
+    margin:auto;
+}
