@@ -884,7 +884,7 @@ if(documentImagesContainer && service.documentImages){
 
     documentImagesContainer.innerHTML = "";
 
-    service.documentImages.forEach(imagePath => {
+    service.documentImages.forEach((imagePath, index) => {
 
         documentImagesContainer.innerHTML += `
 <a
