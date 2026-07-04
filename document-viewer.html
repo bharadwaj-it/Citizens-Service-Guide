@@ -63,23 +63,33 @@ body{
 }
 
 .buttons{
-
     display:flex;
     justify-content:center;
-    gap:20px;
+    align-items:center;   /* This centers both buttons vertically */
+    gap:25px;
     margin-top:30px;
-
 }
 
 .buttons a{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:220px;
+    height:60px;
 
     text-decoration:none;
     background:#004080;
     color:white;
-    padding:12px 25px;
-    border-radius:8px;
+
+    font-size:18px;
     font-weight:bold;
 
+    border-radius:10px;
+
+    line-height:1;        /* Prevents vertical shifting */
+    white-space:nowrap;   /* Prevent text wrapping */
+    vertical-align: middle;
 }
 
 .buttons a:hover{
