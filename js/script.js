@@ -62,27 +62,7 @@ income:{
         "Verify Aadhaar details."
     ],
 
-    sampleFormat: `
-INCOME CERTIFICATE APPLICATION (SAMPLE)
-
-Applicant Name       : __________________
-
-Father/Mother Name   : __________________
-
-Address              : __________________
-
-Occupation           : __________________
-
-Annual Income        : __________________
-
-Aadhaar Number       : __________________
-
-Mobile Number        : __________________
-
-Date                 : __________________
-
-Applicant Signature  : __________________
-`
+  samplePdf: "documents/income-sample.pdf"
 },
 
 caste:{
@@ -140,27 +120,7 @@ caste:{
         "Check details carefully."
     ],
 
-sampleFormat: `
-CASTE CERTIFICATE APPLICATION (SAMPLE)
-
-Applicant Name       : __________________
-
-Father/Mother Name   : __________________
-
-Caste                : __________________
-
-Sub-Caste            : __________________
-
-Address              : __________________
-
-Aadhaar Number       : __________________
-
-Mobile Number        : __________________
-
-Date                 : __________________
-
-Applicant Signature  : __________________
-`
+    samplePdf: "documents/caste-sample.pdf"
 },
 
 birth:{
@@ -218,23 +178,8 @@ documentImages:[
         "Submit application early."
     ],
 
-sampleFormat: `
-BIRTH CERTIFICATE APPLICATION (SAMPLE)
+    samplePdf: "documents/birth-sample.pdf"
 
-Child Name           : __________________
-
-Date of Birth        : __________________
-
-Place of Birth       : __________________
-
-Father Name          : __________________
-
-Mother Name          : __________________
-
-Hospital Name        : __________________
-
-Applicant Signature  : __________________
-`
 },
 
 death:{
@@ -292,23 +237,8 @@ documentImages:[
         "Keep extra photocopies."
     ],
 
-    sampleFormat: `
-DEATH CERTIFICATE APPLICATION (SAMPLE)
+    samplePdf: "documents/death-sample.pdf"
 
-Deceased Name        : __________________
-
-Date of Death        : __________________
-
-Place of Death       : __________________
-
-Applicant Name       : __________________
-
-Relationship         : __________________
-
-Address              : __________________
-
-Signature            : __________________
-`
 },
 
 residence:{
@@ -366,21 +296,8 @@ documentImages:[
         "Bring originals and copies."
     ],
 
-    sampleFormat: `
-RESIDENCE CERTIFICATE APPLICATION (SAMPLE)
+    samplePdf: "documents/residence-sample.pdf"
 
-Applicant Name       : __________________
-
-Father/Mother Name   : __________________
-
-Present Address      : __________________
-
-Period of Residence  : __________________
-
-Aadhaar Number       : __________________
-
-Signature            : __________________
-`
 },
 
 ration:{
@@ -438,23 +355,8 @@ documentImages:[
         "Double-check income proof."
     ],
 
-    sampleFormat: `
-RATION CARD APPLICATION (SAMPLE)
+    samplePdf: "documents/ration-sample.pdf"
 
-Head of Family       : __________________
-
-Address              : __________________
-
-Family Members       : __________________
-
-Aadhaar Numbers      : __________________
-
-Mobile Number        : __________________
-
-Category             : __________________
-
-Signature            : __________________
-`
 },
 
 aadhaar:{
@@ -509,21 +411,8 @@ documentImages:[
         "Keep acknowledgement slip."
     ],
 
-    sampleFormat: `
-AADHAAR UPDATE REQUEST (SAMPLE)
+    samplePdf: "documents/aadhaar-sample.pdf"
 
-Aadhaar Number       : __________________
-
-Name                 : __________________
-
-Update Required      : __________________
-
-Mobile Number        : __________________
-
-Address              : __________________
-
-Signature            : __________________
-`
 },
 
 pension:{
@@ -581,21 +470,8 @@ documentImages:[
         "Keep photocopies."
     ],
 
-    sampleFormat: `
-PENSION APPLICATION (SAMPLE)
+    samplePdf: "documents/pension-sample.pdf"
 
-Applicant Name       : __________________
-
-Age                  : __________________
-
-Address              : __________________
-
-Pension Type         : __________________
-
-Bank Account Number  : __________________
-
-Signature            : __________________
-`
 },
 
 
@@ -654,21 +530,8 @@ documentImages:[
         "Verify spellings."
     ],
 
-    sampleFormat: `
-MARRIAGE CERTIFICATE APPLICATION (SAMPLE)
+    samplePdf: "documents/marriage-sample.pdf"
 
-Bride Name           : __________________
-
-Groom Name           : __________________
-
-Date of Marriage     : __________________
-
-Place of Marriage    : __________________
-
-Witness Details      : __________________
-
-Signature            : __________________
-`
 },
 
 land:{
@@ -723,21 +586,8 @@ land:{
         "Bring ID proof."
     ],
 
-    sampleFormat: `
-LAND RECORD REQUEST (SAMPLE)
+    samplePdf: "documents/land-sample.pdf"
 
-Applicant Name       : __________________
-
-Survey Number        : __________________
-
-Village              : __________________
-
-Mandal               : __________________
-
-District             : __________________
-
-Signature            : __________________
-`
 },
 
 
@@ -884,13 +734,12 @@ service.tips.forEach(item => {
 
 });
 
-const sampleElement =
-document.getElementById("sample-format");
+const samplePdfBtn =
+document.getElementById("samplePdfBtn");
 
-if(sampleElement){
+if(samplePdfBtn){
 
-    sampleElement.innerText =
-    service.sampleFormat;
+    samplePdfBtn.href = service.samplePdf;
 
 }
 
