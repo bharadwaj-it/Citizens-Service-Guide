@@ -596,6 +596,7 @@ marriage:{
 
 documentImages:[
     "images/aadhar.png",
+    "images/aadhar.png",
     "images/marriage.png"
 ],
 
@@ -766,7 +767,7 @@ docsHTML += `
     >
 
     <a
-        href="${service.documentImages[index]}"
+        href="document-viewer.html?image=${encodeURIComponent(service.documentImages[index])}&title=${encodeURIComponent(doc)}"
         target="_blank"
         class="document-link"
     >
@@ -886,10 +887,16 @@ if(documentImagesContainer && service.documentImages){
     service.documentImages.forEach(imagePath => {
 
         documentImagesContainer.innerHTML += `
-            <div class="document-image-card">
-                <img src="${imagePath}" alt="Document">
-            </div>
-        `;
+<a
+    href="document-viewer.html?image=${encodeURIComponent(imagePath)}&title=${encodeURIComponent(service.documents[index])}"
+    target="_blank"
+    class="document-image-card"
+>
+    <img src="${imagePath}" alt="${service.documents[index]}">
+
+    <p>${service.documents[index]}</p>
+</a>
+`;
 
     });
 

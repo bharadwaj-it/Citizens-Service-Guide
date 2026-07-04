@@ -1755,3 +1755,35 @@ footer p{
 .document-link:hover{
     text-decoration:underline;
 }
+
+.document-image-card{
+    display:inline-block;
+    text-align:center;
+    text-decoration:none;
+    color:#003366;
+    margin:15px;
+}
+
+.document-image-card img{
+
+    width:220px;
+    height:auto;
+    border-radius:12px;
+    border:2px solid #ddd;
+    transition:.3s;
+
+}
+
+.document-image-card img:hover{
+
+    transform:scale(1.05);
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+
+}
+
+.document-image-card p{
+
+    margin-top:10px;
+    font-weight:bold;
+
+}
