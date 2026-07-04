@@ -153,8 +153,13 @@ if(image && title){
 
     document.getElementById("downloadBtn").href = image;
 
-    document.getElementById("backBtn").href =
-    `services-details.html?id=${service}`;
+   document.getElementById("backBtn").addEventListener("click", () => {
+
+    window.location.replace(
+        `services-details.html?id=${service}`
+    );
+
+});
 
 }else{
 
