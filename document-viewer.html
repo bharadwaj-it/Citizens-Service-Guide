@@ -155,9 +155,7 @@ if(image && title){
 
    document.getElementById("backBtn").addEventListener("click", () => {
 
-    window.location.replace(
-        `services-details.html?id=${service}`
-    );
+    history.back();
 
 });
 
