@@ -1809,17 +1809,17 @@ footer p{
     justify-content:center;
     align-items:center;
 
-    width:180px;
-    height:55px;
+    width:220px;
+    height:60px;
 
     text-decoration:none;
     background:#004080;
     color:white;
-    font-size:18px;
+    border-radius:10px;
+    font-size:20px;
     font-weight:bold;
 
-    border-radius:10px;
-    transition:.3s;
+    white-space:nowrap;   /* Prevent text wrapping */
 }
 
 .buttons a:hover{
