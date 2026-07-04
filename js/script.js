@@ -12,6 +12,8 @@ income:{
 
     title:"Income Certificate",
 
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
+
     documents:[
         "Aadhaar Card",
         "Ration Card",
@@ -87,6 +89,8 @@ caste:{
     theme: "orange",
 
     title:"Caste Certificate",
+
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
 
     documents:[
         "Aadhaar Card",
@@ -164,6 +168,8 @@ birth:{
 
     title:"Birth Certificate",
 
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
+
     documents:[
         "Hospital Record",
         "Parents Aadhaar",
@@ -235,6 +241,8 @@ death:{
     theme:"gray",
 
     title:"Death Certificate",
+
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
 
     documents:[
         "Death Report",
@@ -308,6 +316,8 @@ residence:{
 
     title:"Residence Certificate",
 
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
+
     documents:[
         "Aadhaar Card",
         "Ration Card",
@@ -377,6 +387,8 @@ ration:{
     theme: "red",
 
     title:"Ration Card",
+
+    applyLink:"https://vswsonline.ap.gov.in/",
 
     documents:[
         "Aadhaar Card",
@@ -450,6 +462,8 @@ aadhaar:{
 
     title:"Aadhaar Update Guide",
 
+    applyLink:"https://myaadhaar.uidai.gov.in/",
+
     documents:[
         "Aadhaar Card",
         "Supporting Document"
@@ -516,6 +530,8 @@ pension:{
     theme: "teal",
 
     title:"Pension Services",
+
+    applyLink:"https://vswsonline.ap.gov.in/",
 
     documents:[
         "Aadhaar Card",
@@ -588,6 +604,8 @@ marriage:{
 
     title:"Marriage Certificate",
 
+    applyLink:"https://ap.meeseva.gov.in/DeptPortal/UserInterface/LoginForm.aspx",
+
     documents:[
         "Bride Aadhaar",
         "Groom Aadhaar",
@@ -657,6 +675,8 @@ land:{
     theme: "brown",
 
     title:"Land Records",
+
+    applyLink:"https://meebhoomi.ap.gov.in/",
 
     documents:[
         "Survey Number",
@@ -739,6 +759,14 @@ if(service && service.theme){
 }
 
 if(service){
+
+    const applyBtn = document.getElementById("applyBtn");
+
+if(applyBtn){
+
+    applyBtn.href = service.applyLink;
+
+}
 
     document.querySelector(".details")
     .classList.add(service.theme);
