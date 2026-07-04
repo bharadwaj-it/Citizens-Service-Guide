@@ -750,7 +750,7 @@ console.log(service.documents);
 
     let docsHTML = "";
 
-    service.documents.forEach(doc => {
+    service.documents.forEach((doc, index) => {
        const checkboxId =
 `${serviceId}-${doc}`;
 
@@ -764,7 +764,15 @@ docsHTML += `
         data-id="${checkboxId}"
         ${isChecked ? "checked" : ""}
     >
-    ${doc}
+
+    <a
+        href="${service.documentImages[index]}"
+        target="_blank"
+        class="document-link"
+    >
+        ${doc}
+    </a>
+
 </li>
 `;
     });

@@ -1745,3 +1745,13 @@ footer p{
     margin-top:10px;
     font-weight:bold;
 }
+
+.document-link{
+    color:#0b5ed7;
+    font-weight:600;
+    text-decoration:none;
+}
+
+.document-link:hover{
+    text-decoration:underline;
+}
