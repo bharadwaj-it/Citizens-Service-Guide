@@ -1,63 +1,94 @@
 # Sachivalayam Citizen Service Guide
 
-## Overview
+## Community Service Project
 
-**Sachivalayam Citizen Service Guide** is a web-based platform developed to improve citizen awareness regarding government services. The project helps users understand application procedures, required documents, eligibility criteria, and processing timelines before visiting the Village/Ward Sachivalayam.
+The **Sachivalayam Citizen Service Guide** is a web-based platform developed as part of a **Community Service Project (CSP)**. The website helps citizens understand various government services offered through Village/Ward Sachivalayams by providing eligibility criteria, required documents, application procedures, processing timelines, FAQs, and a digital feedback system.
+
+---
 
 ## Problem Statement
 
-Many citizens are unaware of service procedures and required documents, leading to delays and repeated visits to government offices.
+Many citizens are unaware of the documents and procedures required for government services. This often leads to repeated visits, delays, and inconvenience. This project provides a single platform where citizens can access service-related information before visiting the Sachivalayam.
+
+---
+
+# Live Project Links
+
+### Citizen Portal
+
+**Website:**  
+https://bharadwaj-it.github.io/Citizens-Service-Guide/
+
+### Admin Feedback Dashboard
+
+**Admin Dashboard:**  
+https://bharadwaj-it.github.io/Citizens-Service-Guide/admin-feedback.html
+
+---
 
 ## Features
 
-* Home Page
-* Services Page (24+ services)
-* Service Details Page
-* Search Functionality
-* Document Checklist
-* FAQ Page
-* Contact & Feedback Page
-* Admin Feedback Dashboard
-* Responsive Design
+- Home Page
+- Services Page (10 Government Services)
+- Service Details Page
+- Service Search Functionality
+- Required Documents Checklist
+- Checklist Download
+- FAQ Page
+- Contact & Feedback Form
+- Firebase Feedback Storage
+- Admin Feedback Dashboard
+- Responsive Design
+
+---
 
 ## Technologies Used
 
 ### Frontend
 
-* HTML
-* CSS
-* JavaScript
+- HTML5
+- CSS3
+- JavaScript (ES6)
 
-### Backend
+### Backend (Backend as a Service)
 
-* Node.js
-* Express.js
+- Firebase
 
 ### Database
 
-* MySQL
+- Cloud Firestore
+
+---
 
 ## Services Included
 
-* Income Certificate
-* Caste Certificate
-* Birth Certificate
-* Death Certificate
-* Residence Certificate
-* Ration Card
-* Aadhaar Update
-* Pension Services
-* PM Kisan
-* Health Card Services
-* Scholarship Services
-* Employment Registration
-* Grievance Services
-* And many more...
+- Income Certificate
+- Caste Certificate
+- Birth Certificate
+- Death Certificate
+- Residence Certificate
+- Ration Card
+- Aadhaar Update Guide
+- Pension Services
+- Marriage Certificate
+- Land Records
+
+---
 
 ## Project Structure
 
 ```text
-Citizen-Service-Guide/
+Citizens-Service-Guide/
+│
+├── css/
+│   └── style.css
+│
+├── images/
+│
+├── js/
+│   ├── script.js
+│   ├── firebase-config.js
+│   └── admin-feedback.js
 │
 ├── index.html
 ├── services.html
@@ -65,18 +96,47 @@ Citizen-Service-Guide/
 ├── faq.html
 ├── contact.html
 ├── admin-feedback.html
-├── css/
-├── js/
-├── images/
-└── README.md
+├── README.md
 ```
+
+---
+
+## Feedback Flow
+
+Citizen
+↓
+GitHub Pages Website
+↓
+Firebase Firestore Database
+↓
+Admin Feedback Dashboard
+
+---
 
 ## Purpose
 
-This project was developed as a **Community Service Project (CSP)** to improve public awareness and accessibility of government services.
+This project was developed as a **Community Service Project (CSP)** to improve public awareness and accessibility of government services through an easy-to-use digital platform.
 
-## Author
+---
 
-**M. Bharadwaj**
-B.Tech Information Technology
-Vignan's Institute of Information Technology
+## Team Project
+
+This project was developed as a **team project** as part of the Community Service Project.
+
+---
+
+## Developed At
+
+**Vignan's Institute of Information Technology**
+
+Department of Information Technology
+
+Academic Year: **2025–2026**
+
+---
+
+## Disclaimer
+
+This website is developed for educational and community service purposes only. It is **not an official government portal**. Citizens should verify the latest information with their respective Village/Ward Sachivalayam before applying for any government service.
+
+Feedback submitted through the website is stored securely in **Firebase Firestore** for demonstration purposes and can be viewed through the Admin Feedback Dashboard.
