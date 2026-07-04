@@ -880,27 +880,9 @@ if(sampleCard){
 
 }
 
-if(documentImagesContainer && service.documentImages){
 
-    documentImagesContainer.innerHTML = "";
 
-    service.documentImages.forEach((imagePath, index) => {
 
-        documentImagesContainer.innerHTML += `
-<a
-    href="document-viewer.html?image=${encodeURIComponent(imagePath)}&title=${encodeURIComponent(service.documents[index])}"
-    target="_blank"
-    class="document-image-card"
->
-    <img src="${imagePath}" alt="${service.documents[index]}">
-
-    <p>${service.documents[index]}</p>
-</a>
-`;
-
-    });
-
-}
 }
 
 const searchBtn =
