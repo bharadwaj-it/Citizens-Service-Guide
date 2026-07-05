@@ -62,7 +62,7 @@ income:{
         "Verify Aadhaar details."
     ],
 
-  samplePdf: "documents/income-sample.pdf"
+  samplePdf: "documents/income-certificate.pdf"
 },
 
 caste:{
@@ -120,7 +120,7 @@ caste:{
         "Check details carefully."
     ],
 
-    samplePdf: "documents/caste-sample.pdf"
+    samplePdf: "documents/caste-certificate.pdf"
 },
 
 birth:{
@@ -178,7 +178,7 @@ documentImages:[
         "Submit application early."
     ],
 
-    samplePdf: "documents/birth-sample.pdf"
+    samplePdf: "documents/birth-certificate.pdf"
 
 },
 
@@ -237,7 +237,7 @@ documentImages:[
         "Keep extra photocopies."
     ],
 
-    samplePdf: "documents/death-sample.pdf"
+    samplePdf: "documents/death-certificate.pdf"
 
 },
 
@@ -296,7 +296,7 @@ documentImages:[
         "Bring originals and copies."
     ],
 
-    samplePdf: "documents/residence-sample.pdf"
+    samplePdf: "documents/residence-certificate.pdf"
 
 },
 
@@ -316,7 +316,7 @@ ration:{
 documentImages:[
     "images/aadhar.png",
     "images/income.png",
-    "images/passport.png"
+    "images/address.png"
 ],
 
     documentPurpose:[
@@ -355,7 +355,7 @@ documentImages:[
         "Double-check income proof."
     ],
 
-    samplePdf: "documents/ration-sample.pdf"
+    samplePdf: "documents/ration-card.pdf"
 
 },
 
@@ -411,7 +411,7 @@ documentImages:[
         "Keep acknowledgement slip."
     ],
 
-    samplePdf: "documents/aadhaar-sample.pdf"
+    samplePdf: "documents/aadhaar-update.pdf"
 
 },
 
@@ -470,7 +470,7 @@ documentImages:[
         "Keep photocopies."
     ],
 
-    samplePdf: "documents/pension-sample.pdf"
+    samplePdf: "documents/pension-service.pdf"
 
 },
 
@@ -530,7 +530,7 @@ documentImages:[
         "Verify spellings."
     ],
 
-    samplePdf: "documents/marriage-sample.pdf"
+    samplePdf: "documents/marriage-certificate.pdf"
 
 },
 
@@ -586,7 +586,7 @@ land:{
         "Bring ID proof."
     ],
 
-    samplePdf: "documents/land-sample.pdf"
+    samplePdf: "documents/land-records.pdf"
 
 },
 
