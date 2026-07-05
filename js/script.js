@@ -368,17 +368,17 @@ aadhaar:{
 
     documents:[
         "Aadhaar Card",
-        "Supporting Document"
+        "Address Proof",
     ],
 
 documentImages:[
     "images/aadhar.png",
-    "images/support.png"
+    "images/address.png"
 ],
 
     documentPurpose:[
     "Aadhaar Card → Existing Aadhaar reference.",
-    "Supporting Document → Verifies updated information."
+    "Address Proof → Verifies updated information."
 ],
     eligibility:
         "Applicant must possess an Aadhaar number.",
