@@ -411,7 +411,7 @@ documentImages:[
         "Keep acknowledgement slip."
     ],
 
-    samplePdf: "documents/aadhaar-update.pdf"
+    samplePdf: "documents/aadhar-update.pdf"
 
 },
 
