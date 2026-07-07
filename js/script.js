@@ -62,7 +62,9 @@ income:{
         "Verify Aadhaar details."
     ],
 
-  samplePdf: "documents/income-certificate.pdf"
+  samplePdf: "documents/income-certificate.pdf",
+
+  guidePage:"guide.html?id=income",
 },
 
 caste:{
@@ -120,7 +122,9 @@ caste:{
         "Check details carefully."
     ],
 
-    samplePdf: "documents/caste-certificate.pdf"
+    samplePdf: "documents/caste-certificate.pdf",
+
+    guidePage:"guide.html?id=caste",
 },
 
 birth:{
@@ -178,7 +182,9 @@ documentImages:[
         "Submit application early."
     ],
 
-    samplePdf: "documents/birth-certificate.pdf"
+    samplePdf: "documents/birth-certificate.pdf",
+
+    guidePage:"guide.html?id=birth",
 
 },
 
@@ -237,7 +243,9 @@ documentImages:[
         "Keep extra photocopies."
     ],
 
-    samplePdf: "documents/death-certificate.pdf"
+    samplePdf: "documents/death-certificate.pdf",
+
+    guidePage:"guide.html?id=death",
 
 },
 
@@ -296,7 +304,9 @@ documentImages:[
         "Bring originals and copies."
     ],
 
-    samplePdf: "documents/residence-certificate.pdf"
+    samplePdf: "documents/residence-certificate.pdf",
+
+    guidePage:"guide.html?id=residence",
 
 },
 
@@ -355,7 +365,9 @@ documentImages:[
         "Double-check income proof."
     ],
 
-    samplePdf: "documents/ration-card.pdf"
+    samplePdf: "documents/ration-card.pdf",
+
+    guidePage:"guide.html?id=ration",
 
 },
 
@@ -411,7 +423,9 @@ documentImages:[
         "Keep acknowledgement slip."
     ],
 
-    samplePdf: "documents/aadhar-update.pdf"
+    samplePdf: "documents/aadhar-update.pdf",
+
+    guidePage:"guide.html?id=aadhaar",
 
 },
 
@@ -470,7 +484,9 @@ documentImages:[
         "Keep photocopies."
     ],
 
-    samplePdf: "documents/pension-service.pdf"
+    samplePdf: "documents/pension-service.pdf",
+
+    guidePage:"guide.html?id=pension",
 
 },
 
@@ -530,7 +546,8 @@ documentImages:[
         "Verify spellings."
     ],
 
-    samplePdf: "documents/marriage-certificate.pdf"
+    samplePdf: "documents/marriage-certificate.pdf",
+    guidePage:"guide.html?id=marriage"
 
 },
 
@@ -586,7 +603,8 @@ land:{
         "Bring ID proof."
     ],
 
-    samplePdf: "documents/land-records.pdf"
+    samplePdf: "documents/land-records.pdf",
+    guidePage:"guide.html?id=land"
 
 },
 
@@ -674,7 +692,7 @@ if(purposeList && service.documentPurpose){
     });
 
 }
-
+document.getElementById("officialBtn").href = service.officialWebsite;
 
     document.getElementById("eligibility").innerText =
 service.eligibility;
@@ -740,6 +758,16 @@ document.getElementById("samplePdfBtn");
 if(samplePdfBtn){
 
     samplePdfBtn.href = service.samplePdf;
+
+    const guideBtn =
+document.getElementById("guideBtn");
+
+if(guideBtn){
+
+    guideBtn.href =
+    service.guidePage;
+
+}
 
 }
 
