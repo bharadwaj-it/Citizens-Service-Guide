@@ -65,6 +65,8 @@ income:{
   samplePdf: "documents/income-certificate.pdf",
 
   guidePage:"guide.html?id=income",
+
+  mode:"Online / MeeSeva",
 },
 
 caste:{
@@ -125,6 +127,8 @@ caste:{
     samplePdf: "documents/caste-certificate.pdf",
 
     guidePage:"guide.html?id=caste",
+
+    mode:"Online / MeeSeva",
 },
 
 birth:{
@@ -185,6 +189,8 @@ documentImages:[
     samplePdf: "documents/birth-certificate.pdf",
 
     guidePage:"guide.html?id=birth",
+
+    mode:"Online / MeeSeva",
 
 },
 
@@ -247,6 +253,8 @@ documentImages:[
 
     guidePage:"guide.html?id=death",
 
+    mode:"Online / MeeSeva",
+
 },
 
 residence:{
@@ -307,6 +315,8 @@ documentImages:[
     samplePdf: "documents/residence-certificate.pdf",
 
     guidePage:"guide.html?id=residence",
+
+    mode:"Online / MeeSeva",
 
 },
 
@@ -369,6 +379,8 @@ documentImages:[
 
     guidePage:"guide.html?id=ration",
 
+    mode:"Online / MeeSeva",
+
 },
 
 aadhaar:{
@@ -426,6 +438,8 @@ documentImages:[
     samplePdf: "documents/aadhar-update.pdf",
 
     guidePage:"guide.html?id=aadhaar",
+
+    mode:"Online / MeeSeva",
 
 },
 
@@ -488,6 +502,8 @@ documentImages:[
 
     guidePage:"guide.html?id=pension",
 
+    mode:"Online / MeeSeva",
+
 },
 
 
@@ -547,6 +563,8 @@ documentImages:[
     ],
 
     samplePdf: "documents/marriage-certificate.pdf",
+
+    mode:"Online / MeeSeva",
     guidePage:"guide.html?id=marriage"
 
 },
@@ -604,6 +622,9 @@ land:{
     ],
 
     samplePdf: "documents/land-records.pdf",
+
+    mode:"Online / MeeSeva",
+
     guidePage:"guide.html?id=land"
 
 },
@@ -700,6 +721,14 @@ service.eligibility;
 document.getElementById("processing-time").innerText =
 service.processingTime;
 
+document.getElementById("statDocs").textContent =
+service.documents.length;
+
+document.getElementById("statTime").textContent =
+service.processingTime;
+
+document.getElementById("statMode").textContent =
+service.mode;
 const processList =
 document.getElementById("application-process");
 
