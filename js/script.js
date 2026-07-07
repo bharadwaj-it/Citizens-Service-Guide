@@ -67,6 +67,7 @@ income:{
   guidePage:"guide.html?id=income",
 
   mode:"Online / MeeSeva",
+  officialWebsite:"https://ap.meeseva.gov.in/"
 },
 
 caste:{
@@ -129,6 +130,7 @@ caste:{
     guidePage:"guide.html?id=caste",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 },
 
 birth:{
@@ -192,6 +194,8 @@ documentImages:[
 
     mode:"Online / MeeSeva",
 
+    officialWebsite:"https://ap.meeseva.gov.in/"
+
 },
 
 death:{
@@ -254,6 +258,7 @@ documentImages:[
     guidePage:"guide.html?id=death",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -317,6 +322,7 @@ documentImages:[
     guidePage:"guide.html?id=residence",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -380,6 +386,7 @@ documentImages:[
     guidePage:"guide.html?id=ration",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -440,6 +447,7 @@ documentImages:[
     guidePage:"guide.html?id=aadhaar",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -503,6 +511,7 @@ documentImages:[
     guidePage:"guide.html?id=pension",
 
     mode:"Online / MeeSeva",
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -565,7 +574,9 @@ documentImages:[
     samplePdf: "documents/marriage-certificate.pdf",
 
     mode:"Online / MeeSeva",
-    guidePage:"guide.html?id=marriage"
+    guidePage:"guide.html?id=marriage",
+
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -625,7 +636,9 @@ land:{
 
     mode:"Online / MeeSeva",
 
-    guidePage:"guide.html?id=land"
+    guidePage:"guide.html?id=land",
+
+    officialWebsite:"https://ap.meeseva.gov.in/"
 
 },
 
@@ -648,6 +661,26 @@ if(service && service.theme){
 }
 
 if(service){
+  let recent =
+JSON.parse(
+localStorage.getItem("recentServices")
+) || [];
+
+recent =
+recent.filter(id=>id!==serviceId);
+
+recent.unshift(serviceId);
+
+recent =
+recent.slice(0,5);
+
+localStorage.setItem(
+
+"recentServices",
+
+JSON.stringify(recent)
+
+);  
 
     const applyBtn = document.getElementById("applyBtn");
 
@@ -1271,3 +1304,44 @@ document.addEventListener("click", (event) => {
     }
 
 });
+
+const recentBox =
+document.getElementById("recentServices");
+
+if(recentBox){
+
+const recent =
+JSON.parse(
+
+localStorage.getItem("recentServices")
+
+) || [];
+
+recent.forEach(id=>{
+
+if(services[id]){
+
+recentBox.innerHTML += `
+
+<a href="services-details.html?id=${id}"
+class="card-link">
+
+<div class="card">
+
+<h3>
+
+${services[id].title}
+
+</h3>
+
+</div>
+
+</a>
+
+`;
+
+}
+
+});
+
+}
