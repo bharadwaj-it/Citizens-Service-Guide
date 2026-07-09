@@ -2,23 +2,24 @@
 
 ## Community Service Project
 
-The **Sachivalayam Citizen Service Guide** is a web-based platform developed as part of a **Community Service Project (CSP)**. It helps citizens understand various government services offered through Village/Ward Sachivalayams by providing eligibility criteria, required documents, application procedures, processing timelines, downloadable sample application forms, online application links, FAQs, and a digital feedback system.
+The **Sachivalayam Citizen Service Guide** is a web-based platform developed as part of a **Community Service Project (CSP)**. It helps citizens understand various government services offered through Village/Ward Sachivalayams by providing eligibility criteria, required documents, application procedures, processing timelines, downloadable sample application forms, reference documents, official application links, FAQs, and a digital feedback system.
 
 ---
 
 # Problem Statement
 
-Many citizens visit Sachivalayams without knowing the required documents, eligibility conditions, or application procedure for government services. This often results in repeated visits, delays, and inconvenience.
+Many citizens visit Village/Ward Sachivalayams without knowing the required documents, eligibility conditions, or application procedure for government services. This often results in repeated visits, delays, and inconvenience.
 
 This project provides a single platform where citizens can:
 
 - Understand service eligibility
-- Prepare required documents
-- View sample documents
-- Download sample application forms
-- Access official online application portals
-- Track required document checklists
+- Check required documents
+- Download document checklists
+- View sample application forms
+- Access reference documents
+- Visit official government application portals
 - Read FAQs before visiting the Sachivalayam
+- Submit feedback and suggestions
 
 ---
 
@@ -45,17 +46,23 @@ https://bharadwaj-it.github.io/Citizens-Service-Guide/admin-feedback.html
 - Responsive Home Page
 - Government Services Directory (10 Services)
 - Dynamic Service Details Page
-- Service Search with Suggestions
+- Service Search with Auto Suggestions
 - Required Documents Checklist
 - Checklist Progress Tracking
-- Download Checklist
-- Sample Document Reference Viewer
-- Download Sample Application Forms (PDF)
+- Checklist Download
+- Document Purpose Information
+- Sample Application Form Download (PDF)
+- Sample Supporting Documents
+- Educational Document Viewer
 - Official Online Application Links
-- Processing Time Information
-- Eligibility Criteria
-- Benefits & Application Process
+- Eligibility Information
+- Application Process
+- Processing Time
+- Benefits of Each Service
+- Common Reasons for Rejection
+- Tips Before Visiting Sachivalayam
 - Frequently Asked Questions
+- FAQ Search
 - Contact & Feedback Form
 - Firebase Firestore Integration
 - Admin Feedback Dashboard
@@ -144,7 +151,7 @@ Citizen
 GitHub Pages Website
       │
       ▼
-Firebase Firestore
+Firebase Cloud Firestore
       │
       ▼
 Admin Feedback Dashboard
@@ -154,38 +161,38 @@ Admin Feedback Dashboard
 
 # Sample Resources
 
-The project includes:
+This project provides educational reference materials including:
 
 - Sample Government Documents
 - Sample Application Forms (PDF)
-- Educational Document Viewer
 - Downloadable Reference Documents
+- Educational Document Viewer
 
-**Note:** These documents are provided only for educational purposes and are not official government-issued documents.
+> **Note:** These documents are provided only for educational purposes and are not official government-issued documents.
 
 ---
 
-# Official Online Services
+# Official Online Application
 
-Each supported government service includes a direct link to the respective official online application portal whenever available, enabling citizens to proceed with online applications after understanding the process.
+Each supported government service includes a direct link to the respective official online application portal (where available), allowing citizens to continue the application process after understanding the required procedure and documentation.
 
 ---
 
 # Purpose
 
-This project was developed as a **Community Service Project (CSP)** to improve public awareness and accessibility of government services through an easy-to-use digital platform.
+The objective of this project is to improve public awareness of government services by providing clear, organized, and easily accessible information before citizens visit the Village/Ward Sachivalayam.
 
 ---
 
 # Team Project
 
-Developed as a **team project** under the Community Service Project.
+This website was developed as a **Community Service Project (CSP)** by a student team under the guidance of the Department of Information Technology.
 
 ---
 
 # Developed At
 
-**Vignan's Institute of Information Technology**
+**Vignan's Institute of Information Technology (Autonomous)**
 
 Department of Information Technology
 
@@ -199,8 +206,8 @@ This website is developed for educational and community service purposes only.
 
 It is **not an official Government of Andhra Pradesh portal**.
 
-Citizens should verify the latest information with their respective Village/Ward Sachivalayam or the official government portal before applying for any government service.
+Citizens should verify the latest information with their respective Village/Ward Sachivalayam or the official government websites before applying for any government service.
 
 Sample documents and application forms are provided only for educational reference.
 
-Feedback submitted through the website is securely stored in **Firebase Cloud Firestore** and displayed in the Admin Feedback Dashboard for demonstration purposes.
+Feedback submitted through the website is securely stored in **Firebase Cloud Firestore** and displayed in the **Admin Feedback Dashboard** for demonstration purposes.
