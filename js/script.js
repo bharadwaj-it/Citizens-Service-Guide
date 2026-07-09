@@ -660,27 +660,7 @@ if(service && service.theme){
     document.body.classList.add(`theme-${service.theme}`);
 }
 
-if(service){
-  let recent =
-JSON.parse(
-localStorage.getItem("recentServices")
-) || [];
-
-recent =
-recent.filter(id=>id!==serviceId);
-
-recent.unshift(serviceId);
-
-recent =
-recent.slice(0,5);
-
-localStorage.setItem(
-
-"recentServices",
-
-JSON.stringify(recent)
-
-);  
+if(service){ 
 
     const applyBtn = document.getElementById("applyBtn");
 
@@ -754,14 +734,6 @@ service.eligibility;
 document.getElementById("processing-time").innerText =
 service.processingTime;
 
-document.getElementById("statDocs").textContent =
-service.documents.length;
-
-document.getElementById("statTime").textContent =
-service.processingTime;
-
-document.getElementById("statMode").textContent =
-service.mode;
 const processList =
 document.getElementById("application-process");
 
@@ -1304,44 +1276,3 @@ document.addEventListener("click", (event) => {
     }
 
 });
-
-const recentBox =
-document.getElementById("recentServices");
-
-if(recentBox){
-
-const recent =
-JSON.parse(
-
-localStorage.getItem("recentServices")
-
-) || [];
-
-recent.forEach(id=>{
-
-if(services[id]){
-
-recentBox.innerHTML += `
-
-<a href="services-details.html?id=${id}"
-class="card-link">
-
-<div class="card">
-
-<h3>
-
-${services[id].title}
-
-</h3>
-
-</div>
-
-</a>
-
-`;
-
-}
-
-});
-
-}
