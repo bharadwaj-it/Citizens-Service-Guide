@@ -804,9 +804,9 @@ footer p{
 
 .info-grid{
     display:grid;
-    grid-template-columns:repeat(2,minmax(450px,1fr));
-    gap:30px;
-    margin-top:40px;
+    grid-template-columns:repeat(2,minmax(380px,1fr));
+    gap:20px;
+    margin-top:30px;
 }
 
 .info-card{
@@ -1517,21 +1517,24 @@ footer p{
 .document-images-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:16px;
+    gap:14px;
     align-items:start;
 }
 
 .document-image-card{
     background:white;
-    border-radius:12px;
-    padding:12px;
+    border-radius:10px;
+    padding:8px;
     text-align:center;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    box-shadow:0 6px 14px rgba(0,0,0,0.06);
+    max-width:220px;
+    margin:0 auto;
 }
 
 .document-image-card img{
     width:100%;
-    height:auto;
+    height:140px;
+    object-fit:cover;
     display:block;
     border-radius:8px;
 }
@@ -1916,33 +1919,7 @@ footer p{
     font-weight:600;
 }
 
-#document-images-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-    margin-top:20px;
-}
-
-.document-image-card{
-    width:220px;
-    background:white;
-    padding:10px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
-}
-
-.document-image-card img{
-    width:100%;
-    height:180px;
-    object-fit:contain;
-    border-radius:8px;
-}
-
-.document-image-card p{
-    margin-top:10px;
-    font-weight:bold;
-}
+/* legacy container removed; grid is injected by JS when needed */
 
 .document-link{
     color:#0b5ed7;
@@ -1959,17 +1936,12 @@ footer p{
     text-align:center;
     text-decoration:none;
     color:#003366;
-    margin:15px;
 }
 
 .document-image-card img{
-
-    width:220px;
-    height:auto;
     border-radius:12px;
-    border:2px solid #ddd;
-    transition:.3s;
-
+    border:2px solid #eee;
+    transition:.18s;
 }
 
 .document-image-card img:hover{
@@ -2126,7 +2098,7 @@ footer p{
 
 /* Main/side split for service details */
 .details-main{
-    padding-right:20px;
+    padding-right:12px;
 }
 
 .details-side{
