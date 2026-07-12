@@ -651,12 +651,7 @@ docsHTML += `
         ${isChecked ? "checked" : ""}
     >
 
-    <a
-        href="document-viewer.html?image=${encodeURIComponent(service.documentImages[index])}&title=${encodeURIComponent(doc)}&service=${serviceId}"
-        class="document-link"
-    >
-        ${doc}
-    </a>
+    <span class="document-link">${doc}</span>
 
 </li>
 `;
