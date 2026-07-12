@@ -4,7 +4,6 @@ import {
   addDoc,
   serverTimestamp
 } from "./firebase-config.js";
-console.log("Script Loaded");
 const services = {
 
 income:{
@@ -653,9 +652,6 @@ const serviceId = params.get("id");
 
 const service = services[serviceId];
 
-const documentImagesContainer =
-document.getElementById("document-images-container");
-
 const detailsSection = document.querySelector(".details");
 
 if (detailsSection && !service) {
@@ -684,9 +680,6 @@ if(applyBtn){
 
 document.getElementById("service-title").innerText =
 service.title;
-
-    console.log(service);
-console.log(service.documents);
 
     let docsHTML = "";
 
@@ -735,26 +728,35 @@ if(purposeList && service.documentPurpose){
     });
 
 }
-document.getElementById("officialBtn").href = service.officialWebsite;
+const officialBtn = document.getElementById("officialBtn");
+    if (officialBtn) {
+        officialBtn.href = service.officialWebsite;
+    }
 
-    document.getElementById("eligibility").innerText =
-service.eligibility;
+    const eligibilityEl = document.getElementById("eligibility");
+    if (eligibilityEl) {
+        eligibilityEl.innerText = service.eligibility;
+    }
 
-document.getElementById("processing-time").innerText =
-service.processingTime;
+    const processingTimeEl = document.getElementById("processing-time");
+    if (processingTimeEl) {
+        processingTimeEl.innerText = service.processingTime;
+    }
 
 const processList =
 document.getElementById("application-process");
 
-processList.innerHTML = "";
+if (processList) {
+    processList.innerHTML = "";
 
-service.applicationProcess.forEach(step => {
+    service.applicationProcess.forEach(step => {
 
-    processList.innerHTML += `
-        <li>${step}</li>
-    `;
+        processList.innerHTML += `
+            <li>${step}</li>
+        `;
 
-});
+    });
+}
 
 const benefitsList =
 document.getElementById("benefits");
@@ -802,19 +804,31 @@ if(samplePdfBtn){
 
     samplePdfBtn.href = service.samplePdf;
 
-    const guideBtn =
-document.getElementById("guideBtn");
+    const guideBtn = document.getElementById("guideBtn");
 
-if(guideBtn){
+    if(guideBtn){
 
-    guideBtn.href =
-    service.guidePage;
+        guideBtn.href =
+        service.guidePage;
+
+    }
 
 }
 
+
+
+const documentImagesContainer =
+document.getElementById("document-images-container");
+
+if (documentImagesContainer && service.documentImages) {
+    documentImagesContainer.innerHTML =
+        service.documentImages.map((img, index) => `
+            <div class="document-image-card">
+                <img src="${img}" alt="${service.documents[index] || 'Document'} example">
+                <p>${service.documents[index] || 'Document example'}</p>
+            </div>
+        `).join("");
 }
-
-
 
 const sampleCard =
 document.getElementById("sample-card");
@@ -827,9 +841,6 @@ if(sampleCard){
 
 }
 
-
-
-
 }
 
 const searchBtn =
@@ -837,13 +848,21 @@ document.getElementById("searchBtn");
 
 if(searchBtn){
 
+    const searchForm =
+document.getElementById("searchForm");
+
     const searchInput =
     document.getElementById("searchInput");
 
     const searchResults =
     document.getElementById("searchResults");
 
-    console.log("Search Initialized");
+    if (searchForm) {
+        searchForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            searchBtn.click();
+        });
+    }
 
     searchBtn.addEventListener("click", () => {
 

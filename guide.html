@@ -215,9 +215,9 @@ if (guide) {
     guideTips.innerHTML = guide.tips.map(tip => `<li>${tip}</li>`).join('');
 } else {
     guideTitle.textContent = 'Guide Not Found';
-    guideDescription.textContent = 'The selected service guide is unavailable. Please return to the services page.';
+    guideDescription.textContent = 'The selected service guide is unavailable or the guide link is missing. Please return to the services page for available services.';
     guideSteps.innerHTML = '<li>Please go back to the <a href="services.html">Services page</a>.</li>';
-    guideTips.innerHTML = '';
+    guideTips.innerHTML = '<li><a href="services.html">Browse available service guides</a></li>';
 }
 </script>
 <footer>
