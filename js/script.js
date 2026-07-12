@@ -19,11 +19,6 @@ income:{
         "Passport Photo"
     ],
 
-    documentImages:[
-    "images/aadhar.png",
-    "images/ration.png",
-    "images/passport.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Identity verification.",
@@ -82,11 +77,6 @@ caste:{
         "Passport Photo"
     ],
 
-    documentImages:[
-    "images/aadhar.png",
-    "images/community.png",
-    "images/passport.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Identity verification.",
@@ -145,11 +135,6 @@ birth:{
         "Address Proof"
     ],
 
-documentImages:[
-    "images/hospital.png",
-    "images/aadhar.png",
-    "images/address.png"
-],
 
     documentPurpose:[
     "Hospital Record → Confirms birth details.",
@@ -210,11 +195,6 @@ death:{
         "Address Proof"
     ],
 
-documentImages:[
-    "images/dreport.png",
-    "images/aadhar.png",
-    "images/address.png"
-],
 
     documentPurpose:[
     "Death Report → Confirms the death event.",
@@ -274,11 +254,6 @@ residence:{
         "Electricity Bill"
     ],
 
-documentImages:[
-    "images/aadhar.png",
-    "images/ration.png",
-    "images/electricity.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Identity verification.",
@@ -338,11 +313,6 @@ ration:{
         "Address Proof"
     ],
 
-documentImages:[
-    "images/aadhar.png",
-    "images/income.png",
-    "images/address.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Family member identification.",
@@ -401,10 +371,6 @@ aadhaar:{
         "Address Proof",
     ],
 
-documentImages:[
-    "images/aadhar.png",
-    "images/address.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Existing Aadhaar reference.",
@@ -463,11 +429,6 @@ pension:{
         "Income Certificate"
     ],
 
-documentImages:[
-    "images/aadhar.png",
-    "images/bank.png",
-    "images/incomecert.png"
-],
 
     documentPurpose:[
     "Aadhaar Card → Identity verification.",
@@ -528,11 +489,6 @@ marriage:{
         "Marriage Proof"
     ],
 
-documentImages:[
-    "images/aadhar.png",
-    "images/aadhar.png",
-    "images/marriage.png"
-],
 
     documentPurpose:[
     "Bride Aadhaar → Bride identity verification.",
@@ -591,10 +547,6 @@ land:{
         "Aadhaar Card"
     ],
 
-    documentImages:[
-    "images/survey.png",
-    "images/aadhar.png"
-],
 
     documentPurpose:[
     "Survey Number → Identifies the land parcel.",
