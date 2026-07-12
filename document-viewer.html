@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="View sample document images used for Sachivalayam service application guidance, with download and back navigation options." />
 
 <title>Sample Document Viewer</title>
 
@@ -104,6 +105,10 @@ body{
 
 <body>
 
+<header>
+    <h1>Sample Document Viewer</h1>
+</header>
+<main>
 <div class="viewer">
 
 <h1 id="docTitle"></h1>
@@ -132,8 +137,7 @@ It is not an official government document.
     <a id="backBtn">← Back</a>
 
 </div>
-
-</div>
+</main>
 
 <script>
 
@@ -149,7 +153,9 @@ if(image && title){
 
     document.getElementById("docTitle").textContent = title;
 
-    document.getElementById("docImage").src = image;
+    const docImage = document.getElementById("docImage");
+    docImage.src = image;
+    docImage.alt = `${title} sample document image`;
 
     document.getElementById("downloadBtn").href = image;
 
