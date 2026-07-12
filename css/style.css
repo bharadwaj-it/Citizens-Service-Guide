@@ -1512,6 +1512,29 @@ footer p{
     gap:25px;
 }
 
+/* Document images grid used on service details */
+.document-images-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:16px;
+    align-items:start;
+}
+
+.document-image-card{
+    background:white;
+    border-radius:12px;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.document-image-card img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:8px;
+}
+
 .document-card{
     background:white;
 
@@ -2083,4 +2106,31 @@ footer p{
     clip:rect(0,0,0,0);
     white-space:nowrap;
     border:0;
+}
+
+/* Make main content areas constrained and centered */
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* Service details columns and spacing */
+.details{
+    display:grid;
+    grid-template-columns:1fr 360px;
+    gap:30px;
+    align-items:start;
+}
+
+@media (max-width:900px){
+    .faq-preview-grid{grid-template-columns:repeat(2,1fr);}    
+    .details{grid-template-columns:1fr;}
+    .hero h2{font-size:2.5rem;}
+    .faq-preview h2,.common-documents h2{font-size:2rem}
+}
+
+@media (max-width:480px){
+    .faq-preview-grid{grid-template-columns:1fr}
+    .document-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
 }
