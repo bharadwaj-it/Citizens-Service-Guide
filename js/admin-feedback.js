@@ -37,24 +37,16 @@ initializeApp(firebaseConfig);
 const db =
 getFirestore(app);
 
-const feedbackBody =
-document.getElementById("feedbackBody");
+const feedbackBody = document.getElementById("feedbackBody");
+const feedbackSearch = document.getElementById("feedbackSearch");
+const feedbackQuery = query(collection(db, "feedback"), orderBy("createdAt", "desc"));
 
-const q = query(
-    collection(db,"feedback"),
-    orderBy("createdAt","desc")
-);
-
-onSnapshot(
-    collection(db,"feedback"),
-    (snapshot)=>{
-
+if (feedbackBody) {
+    onSnapshot(feedbackQuery, (snapshot) => {
         feedbackBody.innerHTML = "";
 
-        snapshot.forEach((doc)=>{
-
+        snapshot.forEach((doc) => {
             const data = doc.data();
-
             feedbackBody.innerHTML += `
             <tr>
                 <td>${data.name || ""}</td>
@@ -63,41 +55,20 @@ onSnapshot(
                 <td>${data.message || ""}</td>
             </tr>
             `;
-
         });
-
-    }
-);
-
-const searchInput =
-document.getElementById("feedbackSearch");
-
-searchInput.addEventListener("keyup", ()=>{
-
-    const value =
-    searchInput.value.toLowerCase();
-
-    const rows =
-    document.querySelectorAll("#feedbackBody tr");
-
-    rows.forEach((row)=>{
-
-        const text =
-        row.innerText.toLowerCase();
-
-        if(text.includes(value)){
-
-            row.style.display = "";
-
-        }
-        else{
-
-            row.style.display = "none";
-
-        }
-
+    }, (error) => {
+        console.error("Failed to load feedback:", error);
     });
+}
 
-});
+if (feedbackSearch) {
+    feedbackSearch.addEventListener("input", () => {
+        const value = feedbackSearch.value.toLowerCase();
+        const rows = document.querySelectorAll("#feedbackBody tr");
 
-loadFeedback();
+        rows.forEach((row) => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = text.includes(value) ? "" : "none";
+        });
+    });
+}

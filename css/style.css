@@ -1868,50 +1868,112 @@ footer p{
     margin-top:30px;
 }
 
-.buttons a{
+.buttons a,
+.buttons button{
     display:flex;
     justify-content:center;
     align-items:center;
-
     width:220px;
     height:60px;
-
     text-decoration:none;
     background:#004080;
     color:white;
     border-radius:10px;
     font-size:20px;
     font-weight:bold;
-
-    white-space:nowrap;   /* Prevent text wrapping */
+    white-space:nowrap;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
 }
 
-.buttons a:hover{
+.buttons a:hover,
+.buttons button:hover{
     background:#0066cc;
     transform:translateY(-2px);
 }
 
 .apply-btn{
-
-    display:inline-block;
-
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
     margin:25px 0;
-
     padding:14px 28px;
-
     background:#198754;
-
     color:white;
-
     text-decoration:none;
-
     font-size:18px;
-
     font-weight:bold;
-
     border-radius:8px;
-
     transition:.3s;
+}
+
+.apply-btn:hover{
+    background:#157347;
+    transform:translateY(-2px);
+}
+
+.secondary-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin:25px 0 0 15px;
+    padding:14px 28px;
+    background:#0b4a8b;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.secondary-btn:hover{
+    background:#0a3f75;
+}
+
+.download-btn,
+.back-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    background:#004080;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.download-btn:hover,
+.back-btn:hover{
+    background:#0066cc;
+}
+
+.viewer-error{
+    background:#fee2e2;
+    color:#991b1b;
+    border-left:6px solid #f87171;
+    padding:18px;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+.sr-only{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
 
 }
 
