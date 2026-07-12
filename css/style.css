@@ -2060,7 +2060,7 @@ footer p{
 @media (min-width:540px) {
     .details-side{
         position:sticky;
-        top:80px;
+        top:20px;
         align-self:start;
         z-index:20;
     }
