@@ -2134,3 +2134,6 @@ footer p{
     .faq-preview-grid{grid-template-columns:1fr}
     .document-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));}
 }
+
+/* EOF: ensure all blocks are properly closed */
+
