@@ -796,31 +796,7 @@ if(samplePdfBtn){
 
 
 
-// Create and insert document images grid only when images are provided for the service
-if (service.documentImages && Array.isArray(service.documentImages) && service.documentImages.length > 0) {
-    const detailsMain = document.querySelector('.details-main');
-    if (detailsMain) {
-        const grid = document.createElement('div');
-        grid.id = 'document-images-container';
-        grid.className = 'document-images-grid';
-        grid.setAttribute('aria-live', 'polite');
-
-        grid.innerHTML = service.documentImages.map((img, index) => `
-            <div class="document-image-card">
-                <img src="${img}" alt="${(service.documents && service.documents[index]) || 'Document'} example">
-                <p>${(service.documents && service.documents[index]) || 'Document example'}</p>
-            </div>
-        `).join('');
-
-        // insert grid after the document-purpose list if present, otherwise append
-        const purpose = document.getElementById('document-purpose');
-        if (purpose && purpose.parentNode) {
-            purpose.parentNode.insertBefore(grid, purpose.nextSibling);
-        } else {
-            detailsMain.appendChild(grid);
-        }
-    }
-}
+// Thumbnail feature removed: document images are no longer injected for services.
 
 const sampleCard =
 document.getElementById("sample-card");

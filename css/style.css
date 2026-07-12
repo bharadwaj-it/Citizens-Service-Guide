@@ -1513,31 +1513,7 @@ footer p{
     gap:25px;
 }
 
-/* Document images grid used on service details */
-.document-images-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:14px;
-    align-items:start;
-}
-
-.document-image-card{
-    background:white;
-    border-radius:10px;
-    padding:8px;
-    text-align:center;
-    box-shadow:0 6px 14px rgba(0,0,0,0.06);
-    max-width:220px;
-    margin:0 auto;
-}
-
-.document-image-card img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    display:block;
-    border-radius:8px;
-}
+/* Thumbnail feature removed; related rules cleaned up. */
 
 .document-card{
     background:white;
@@ -1931,32 +1907,7 @@ footer p{
     text-decoration:underline;
 }
 
-.document-image-card{
-    display:inline-block;
-    text-align:center;
-    text-decoration:none;
-    color:#003366;
-}
-
-.document-image-card img{
-    border-radius:12px;
-    border:2px solid #eee;
-    transition:.18s;
-}
-
-.document-image-card img:hover{
-
-    transform:scale(1.05);
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
-
-}
-
-.document-image-card p{
-
-    margin-top:10px;
-    font-weight:bold;
-
-}
+/* Removed duplicate image-card styles. */
 
 .image-box img{
     max-width:450px;
