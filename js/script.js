@@ -656,6 +656,15 @@ const service = services[serviceId];
 const documentImagesContainer =
 document.getElementById("document-images-container");
 
+const detailsSection = document.querySelector(".details");
+
+if (detailsSection && !service) {
+    detailsSection.innerHTML = `
+        <h2>Service Not Found</h2>
+        <p>The requested service could not be found. Please go back to <a href="services.html">Services</a> or <a href="index.html">Home</a>.</p>
+    `;
+}
+
 if(service && service.theme){
     document.body.classList.add(`theme-${service.theme}`);
 }
@@ -839,15 +848,20 @@ if(searchBtn){
     searchBtn.addEventListener("click", () => {
 
         const keyword =
-        searchInput.value.toLowerCase();
+        searchInput.value.toLowerCase().trim();
 
         console.log(keyword);
 
-        searchResults.innerHTML = "<h2>TEST WORKING</h2>";
+        searchResults.innerHTML = "";
 
-searchResults.innerHTML = "";
+        if (keyword.length === 0) {
+            searchResults.innerHTML = `
+                <p>Please enter a service name to search.</p>
+            `;
+            return;
+        }
 
-let found = false;
+        let found = false;
 
 for(const key in services){
 
