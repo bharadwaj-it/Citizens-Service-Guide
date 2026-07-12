@@ -675,8 +675,9 @@ if(applyBtn){
 
 }
 
-    document.querySelector(".details")
-    .classList.add(service.theme);
+    if(detailsSection){
+        detailsSection.classList.add(service.theme);
+    }
 
 document.getElementById("service-title").innerText =
 service.title;
@@ -709,8 +710,10 @@ docsHTML += `
 `;
     });
 
-    document.getElementById("documents").innerHTML =
-    docsHTML;
+    const documentsEl = document.getElementById("documents");
+    if (documentsEl) {
+        documentsEl.innerHTML = docsHTML;
+    }
 
     const purposeList =
 document.getElementById("document-purpose");
@@ -758,44 +761,20 @@ if (processList) {
     });
 }
 
-const benefitsList =
-document.getElementById("benefits");
+const benefitsList = document.getElementById("benefits");
+if (benefitsList && service.benefits) {
+    benefitsList.innerHTML = service.benefits.map(item => `<li>${item}</li>`).join("");
+}
 
-benefitsList.innerHTML = "";
+const rejectionList = document.getElementById("rejection-reasons");
+if (rejectionList && service.rejectionReasons) {
+    rejectionList.innerHTML = service.rejectionReasons.map(item => `<li>${item}</li>`).join("");
+}
 
-service.benefits.forEach(item => {
-
-    benefitsList.innerHTML += `
-        <li>${item}</li>
-    `;
-
-});
-
-const rejectionList =
-document.getElementById("rejection-reasons");
-
-rejectionList.innerHTML = "";
-
-service.rejectionReasons.forEach(item => {
-
-    rejectionList.innerHTML += `
-        <li>${item}</li>
-    `;
-
-});
-
-const tipsList =
-document.getElementById("tips");
-
-tipsList.innerHTML = "";
-
-service.tips.forEach(item => {
-
-    tipsList.innerHTML += `
-        <li>${item}</li>
-    `;
-
-});
+const tipsList = document.getElementById("tips");
+if (tipsList && service.tips) {
+    tipsList.innerHTML = service.tips.map(item => `<li>${item}</li>`).join("");
+}
 
 const samplePdfBtn =
 document.getElementById("samplePdfBtn");
@@ -843,19 +822,17 @@ if(sampleCard){
 
 }
 
-const searchBtn =
-document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
+const suggestions = document.getElementById("suggestions");
+const searchBtn = document.getElementById("searchBtn");
+const searchResults = document.getElementById("searchResults");
 
 if(searchBtn){
 
     const searchForm =
 document.getElementById("searchForm");
 
-    const searchInput =
-    document.getElementById("searchInput");
-
-    const searchResults =
-    document.getElementById("searchResults");
+    
 
     if (searchForm) {
         searchForm.addEventListener("submit", (event) => {
@@ -1026,11 +1003,7 @@ if(downloadBtn){
     });
 
 }
-const searchInput =
-document.getElementById("searchInput");
-
-const suggestions =
-document.getElementById("suggestions");
+// `searchInput` and `suggestions` are declared earlier
 
 if(searchInput){
     searchInput.setAttribute("autocomplete", "off");
