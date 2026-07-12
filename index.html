@@ -47,6 +47,8 @@
                 type="text"
                 id="searchInput"
                 aria-label="Search for a service"
+                autocomplete="off"
+                aria-describedby="searchTip"
                 placeholder="Search for a service..."
             >
 
@@ -58,7 +60,7 @@
 
         <ul id="suggestions" aria-live="polite" role="listbox" aria-label="Search suggestions"></ul>
 
-        <div class="search-tip-box">
+        <div id="searchTip" class="search-tip-box">
             Start typing a service name or press Enter to search.
         </div>
 

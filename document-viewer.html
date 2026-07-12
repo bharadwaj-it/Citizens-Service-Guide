@@ -107,69 +107,90 @@ body{
 
 <header>
     <h1>Sample Document Viewer</h1>
+
+    <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 </header>
 <main>
-<div class="viewer">
+<section class="viewer" aria-labelledby="docTitle">
 
-<h1 id="docTitle"></h1>
+    <h2 id="docTitle">Document Preview</h2>
 
-<div class="image-box">
+    <div class="image-box">
+        <img id="docImage" alt="Sample document preview" loading="lazy">
+    </div>
 
-<img id="docImage">
+    <div id="viewerError" class="viewer-error sr-only" role="alert" aria-live="assertive"></div>
 
-</div>
+    <div class="warning">
+        <strong>Educational Sample Only</strong><br>
+        This document is provided only for educational reference.
+        It is not an official government document.
+    </div>
 
-<div class="warning">
+    <div class="buttons">
+        <a id="downloadBtn" download class="download-btn" aria-label="Download sample document">
+            ⬇ Download Image
+        </a>
 
-<strong>Educational Sample Only</strong><br>
-
-This document is provided only for educational reference.
-It is not an official government document.
-
-</div>
-
-<div class="buttons">
-
-    <a id="downloadBtn" download>
-        ⬇ Download Image
-    </a>
-
-    <a id="backBtn">← Back</a>
-
-</div>
+        <button id="backBtn" type="button" class="back-btn" aria-label="Go back to the previous page">
+            ← Back
+        </button>
+    </div>
+</section>
 </main>
 
 <script>
-
 const params = new URLSearchParams(window.location.search);
-
 const image = params.get("image");
-
 const title = params.get("title");
 
-const service = params.get("service");
+const docTitle = document.getElementById("docTitle");
+const docImage = document.getElementById("docImage");
+const downloadBtn = document.getElementById("downloadBtn");
+const backBtn = document.getElementById("backBtn");
+const viewerError = document.getElementById("viewerError");
 
-if(image && title){
+function showViewerError(message) {
+    if (viewerError) {
+        viewerError.textContent = message;
+        viewerError.classList.remove("sr-only");
+    }
+    if (docImage) {
+        docImage.style.display = "none";
+    }
+    if (downloadBtn) {
+        downloadBtn.style.display = "none";
+    }
+}
 
-    document.getElementById("docTitle").textContent = title;
+if (image && title) {
+    if (docTitle) {
+        docTitle.textContent = title;
+    }
+    if (docImage) {
+        docImage.src = image;
+        docImage.alt = `${title} sample document image`;
+        docImage.addEventListener("error", () => {
+            showViewerError("Unable to load the document preview. Please try downloading the image or go back.");
+        });
+    }
+    if (downloadBtn) {
+        downloadBtn.href = image;
+        downloadBtn.setAttribute("aria-label", `Download ${title} sample document`);
+    }
+} else {
+    showViewerError("Document not found. Please use the back button to return to the previous page.");
+}
 
-    const docImage = document.getElementById("docImage");
-    docImage.src = image;
-    docImage.alt = `${title} sample document image`;
-
-    document.getElementById("downloadBtn").href = image;
-
-   document.getElementById("backBtn").addEventListener("click", () => {
-
-    history.back();
-
-});
-
-}else{
-
-    document.body.innerHTML =
-    "<h1 style='text-align:center'>Document Not Found</h1>";
-
+if (backBtn) {
+    backBtn.addEventListener("click", () => {
+        history.back();
+    });
 }
 </script>
 

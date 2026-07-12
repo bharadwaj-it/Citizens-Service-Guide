@@ -1016,126 +1016,121 @@ const suggestions =
 document.getElementById("suggestions");
 
 if(searchInput){
+    searchInput.setAttribute("autocomplete", "off");
+    suggestions?.setAttribute("aria-expanded", "false");
 
     searchInput.addEventListener("input", () => {
-
-        const value =
-        searchInput.value.toLowerCase();
-
+        const value = searchInput.value.toLowerCase();
         suggestions.innerHTML = "";
 
         if(value.length === 0){
+            suggestions.setAttribute("aria-expanded", "false");
             return;
         }
 
-const matches = serviceList.filter(
-    ([key, service]) => {
+        const matches = serviceList.filter(([key, service]) => {
+            const title = service.title;
+            return title.toLowerCase().includes(value);
+        });
 
-        const title =
-        service.title;
+        if (matches.length === 0) {
+            suggestions.innerHTML = `
+                <li class="suggestion-item suggestion-empty" role="option">
+                    No matching services found.
+                </li>
+            `;
+            suggestions.setAttribute("aria-expanded", "false");
+        } else {
+            suggestions.setAttribute("aria-expanded", "true");
+            matches.forEach(([key, service]) => {
+                const item = document.createElement("li");
+                item.classList.add("suggestion-item");
+                item.setAttribute("role", "option");
+                item.setAttribute("tabindex", "0");
+                item.innerText = service.title;
 
-        return title.toLowerCase().includes(value);
+                item.addEventListener("click", () => {
+                    window.location.href = `services-details.html?id=${key}`;
+                });
 
-    }
-);
+                item.addEventListener("keydown", (event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                        event.preventDefault();
+                        item.click();
+                    }
+                });
 
-       if (matches.length === 0) {
-           suggestions.innerHTML = `
-               <li class="suggestion-item suggestion-empty">
-                   No matching services found.
-               </li>
-           `;
-       } else {
-           matches.forEach(([key, service]) => {
-
-               const item =
-               document.createElement("li");
-
-               item.classList.add("suggestion-item");
-               item.setAttribute("role", "option");
-               item.innerText =
-                   service.title;
-
-               item.addEventListener("click", () => {
-
-                   window.location.href =
-                   `services-details.html?id=${key}`;
-
-               });
-
-               suggestions.appendChild(item);
-           });
-       }
-
+                suggestions.appendChild(item);
+            });
+        }
     });
 }
 const faqs = [
-
     {
         question: "How many days does Income Certificate take?",
-        answer: "Usually 7 working days."
+        answer: "Usually 7 working days.",
+        category: "Processing"
     },
-
     {
         question: "Is Aadhaar Card mandatory?",
-        answer: "Yes, Aadhaar is required for most services."
+        answer: "Yes, Aadhaar is required for most services.",
+        category: "Certificates"
     },
-
     {
         question: "Can I apply online?",
-        answer: "Some services can be applied online, while others require visiting Sachivalayam."
+        answer: "Some services can be applied online, while others require visiting Sachivalayam.",
+        category: "Applications"
     },
-
     {
         question: "Can someone else apply on my behalf?",
-        answer: "Yes, an authorized person can apply with proper documents."
+        answer: "Yes, an authorized person can apply with proper documents.",
+        category: "Support"
     },
-
     {
         question: "What should I do if my application is rejected?",
-        answer: "Visit the concerned Sachivalayam office and inquire about the reason."
+        answer: "Visit the concerned Sachivalayam office and inquire about the reason.",
+        category: "Support"
     },
-
     {
         question: "How can I track my application status?",
-        answer: "You can contact the Sachivalayam office or use the official tracking facility if available."
+        answer: "You can contact the Sachivalayam office or use the official tracking facility if available.",
+        category: "Support"
     },
-
     {
-    question:"What documents are generally required?",
-    answer:"Aadhaar Card, photographs, address proof and service-specific documents." 
-},
-
-{
-    question:"Can I submit photocopies?",
-    answer:"Carry photocopies along with original documents for verification."
-},
-
-{
-    question:"Can I edit my submitted application?",
-    answer:"Contact the concerned office immediately after submission."
-},
-
-{
-    question:"Are services free?",
-    answer:"Some services are free while others may have government-prescribed fees."
-},
-
-{
-    question:"What if I lose my acknowledgement receipt?",
-    answer:"Visit the office and provide your application details."
-},
-
-{
-    question:"Can senior citizens get assistance?",
-    answer:"Yes, Sachivalayam staff assist senior citizens whenever possible."
-},
-
-{
-    question:"Do processing times vary?",
-    answer:"Yes, timelines may differ depending on the service."
-},
-
+        question: "What documents are generally required?",
+        answer: "Aadhaar Card, photographs, address proof and service-specific documents.",
+        category: "Certificates"
+    },
+    {
+        question: "Can I submit photocopies?",
+        answer: "Carry photocopies along with original documents for verification.",
+        category: "Certificates"
+    },
+    {
+        question: "Can I edit my submitted application?",
+        answer: "Contact the concerned office immediately after submission.",
+        category: "Applications"
+    },
+    {
+        question: "Are services free?",
+        answer: "Some services are free while others may have government-prescribed fees.",
+        category: "Support"
+    },
+    {
+        question: "What if I lose my acknowledgement receipt?",
+        answer: "Visit the office and provide your application details.",
+        category: "Support"
+    },
+    {
+        question: "Can senior citizens get assistance?",
+        answer: "Yes, Sachivalayam staff assist senior citizens whenever possible.",
+        category: "Support"
+    },
+    {
+        question: "Do processing times vary?",
+        answer: "Yes, timelines may differ depending on the service.",
+        category: "Processing"
+    }
 ];
 const faqContainer =
 document.getElementById("faqContainer");
