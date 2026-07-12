@@ -1139,83 +1139,103 @@ const faqs = [
 ];
 const faqContainer =
 document.getElementById("faqContainer");
+const faqSearch =
+document.getElementById("faqSearch");
+const faqCategories =
+document.getElementById("faqCategories");
+let selectedFaqCategory = "All";
 
-if(faqContainer){
+function renderFaqItems(){
+    if(!faqContainer){
+        return;
+    }
 
-    faqs.forEach(faq => {
+    const keyword =
+    faqSearch?.value.toLowerCase().trim() || "";
 
-        faqContainer.innerHTML += `
-            <div class="faq-item">
+    faqContainer.innerHTML = "";
 
-                <button class="faq-question">
-                   ▶ ${faq.question}
-                </button>
+    const filteredFaqs = faqs.filter(faq => {
+        const matchesCategory =
+            selectedFaqCategory === "All" ||
+            faq.category === selectedFaqCategory;
 
-                <div class="faq-answer">
-                    ${faq.answer}
-                </div>
+        const matchesKeyword =
+            keyword.length === 0 ||
+            (`${faq.question} ${faq.answer}`.toLowerCase())
+            .includes(keyword);
 
-            </div>
-        `;
+        return matchesCategory && matchesKeyword;
     });
 
+    if(filteredFaqs.length === 0){
+        faqContainer.innerHTML = `
+            <div class="faq-no-results">
+                No FAQs match your search or selected category.
+            </div>
+        `;
+        return;
+    }
+
+    filteredFaqs.forEach((faq, index) => {
+        const item = document.createElement("article");
+        item.className = "faq-item";
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "faq-question";
+        button.setAttribute("aria-expanded", "false");
+        const answerId = `faq-answer-${index}`;
+        button.setAttribute("aria-controls", answerId);
+        button.innerText = `▶ ${faq.question}`;
+
+        const answer = document.createElement("div");
+        answer.className = "faq-answer";
+        answer.id = answerId;
+        answer.hidden = true;
+        answer.innerText = faq.answer;
+
+        item.appendChild(button);
+        item.appendChild(answer);
+        faqContainer.appendChild(item);
+    });
+}
+
+if(faqCategories){
+    const categoryButtons =
+        faqCategories.querySelectorAll(".faq-category-card");
+
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            selectedFaqCategory = button.dataset.category || "All";
+            categoryButtons.forEach(btn => btn.classList.toggle("active", btn === button));
+            renderFaqItems();
+        });
+    });
+}
+
+if(faqSearch){
+    faqSearch.addEventListener("input", renderFaqItems);
+}
+
+if(faqContainer){
+    renderFaqItems();
 }
 
 document.addEventListener("click", (event) => {
-
     if(event.target.classList.contains("faq-question")){
-
-        const answer =
-        event.target.nextElementSibling;
-
-        if(answer.style.display === "block"){
-
-            answer.style.display = "none";
-
-        }else{
-
-            answer.style.display = "block";
-
+        const button = event.target;
+        const answer = document.getElementById(button.getAttribute("aria-controls"));
+        if(!answer){
+            return;
         }
+
+        const expanded = button.getAttribute("aria-expanded") === "true";
+        button.setAttribute("aria-expanded", String(!expanded));
+        button.innerText = button.innerText.replace(/^▶ /, expanded ? "▶ " : "▼ ");
+        answer.hidden = expanded;
     }
-
 });
-
-const faqSearch =
-document.getElementById("faqSearch");
-
-if(faqSearch){
-
-    faqSearch.addEventListener("input", () => {
-
-        const keyword =
-        faqSearch.value.toLowerCase();
-
-        const faqItems =
-        document.querySelectorAll(".faq-item");
-
-        faqItems.forEach(item => {
-
-            const question =
-            item.querySelector(".faq-question")
-            .innerText
-            .toLowerCase();
-
-            if(question.includes(keyword)){
-
-                item.style.display = "block";
-
-            }else{
-
-                item.style.display = "none";
-
-            }
-
-        });
-
-    });
-
-}
 
 const sendBtn = document.getElementById("sendBtn");
 
