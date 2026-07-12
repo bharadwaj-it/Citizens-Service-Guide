@@ -2056,12 +2056,21 @@ footer p{
     width:100%;
 }
 
-/* Make sidebar sticky on larger viewports */
-@media(min-width:901px){
+/* Make sidebar sticky on tablets and larger; keep it accessible on narrower viewports */
+@media (min-width:540px) {
     .details-side{
         position:sticky;
-        top:110px;
+        top:80px;
         align-self:start;
+        z-index:20;
+    }
+}
+
+/* For very small viewports keep sidebar in normal flow (not fixed) to avoid covering content */
+@media (max-width:539px) {
+    .details-side{
+        position:static;
+        width:100%;
     }
 }
 
