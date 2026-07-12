@@ -1067,7 +1067,6 @@ const matches = serviceList.filter(
            });
        }
 
-});
     });
 }
 const faqs = [
