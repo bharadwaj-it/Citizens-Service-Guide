@@ -1031,32 +1031,41 @@ if(searchInput){
 const matches = serviceList.filter(
     ([key, service]) => {
 
-const title =
-service.title;
+        const title =
+        service.title;
 
         return title.toLowerCase().includes(value);
 
     }
 );
 
-       matches.forEach(([key, service]) => {
+       if (matches.length === 0) {
+           suggestions.innerHTML = `
+               <li class="suggestion-item suggestion-empty">
+                   No matching services found.
+               </li>
+           `;
+       } else {
+           matches.forEach(([key, service]) => {
 
-    const div =
-    document.createElement("div");
+               const item =
+               document.createElement("li");
 
-    div.classList.add("suggestion-item");
+               item.classList.add("suggestion-item");
+               item.setAttribute("role", "option");
+               item.innerText =
+                   service.title;
 
-div.innerText =
-service.title;
+               item.addEventListener("click", () => {
 
-    div.addEventListener("click", () => {
+                   window.location.href =
+                   `services-details.html?id=${key}`;
 
-        window.location.href =
-        `services-details.html?id=${key}`;
+               });
 
-    });
-
-    suggestions.appendChild(div);
+               suggestions.appendChild(item);
+           });
+       }
 
 });
     });
