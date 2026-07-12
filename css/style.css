@@ -1148,6 +1148,7 @@ footer p{
 
 .faq-category-card{
     background:white;
+    color:#0B4A8B;
     padding:25px;
     text-align:center;
     font-size:22px;
@@ -1157,6 +1158,11 @@ footer p{
     border:2px solid transparent;
     cursor:pointer;
     transition:0.25s ease;
+    min-height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
 }
 
 .faq-category-card:hover,
@@ -1171,6 +1177,7 @@ footer p{
     width:100%;
     text-align:left;
     background:#f8fafc;
+    color:#0B4A8B;
     border:none;
     border-radius:15px;
     cursor:pointer;

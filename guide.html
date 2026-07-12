@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Service guide articles and step-by-step assistance for Sachivalayam services." />
+    <title>Service Guide - Sachivalayam Citizen Service Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>Sachivalayam Citizen Service Guide</h1>
+    <nav aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+<main>
+<section class="guide-page">
+    <div class="guide-hero">
+        <h2>Service Guidance</h2>
+        <p id="guideDescription">Loading service guidance...</p>
+    </div>
+    <article class="guide-content" id="guideContent">
+        <h3 id="guideTitle">Loading...</h3>
+        <p id="guideIntro"></p>
+        <h4>Key steps</h4>
+        <ol id="guideSteps"></ol>
+        <h4>Important tips</h4>
+        <ul id="guideTips"></ul>
+    </article>
+</section>
+</main>
+<script type="module">
+const params = new URLSearchParams(window.location.search);
+const serviceId = params.get('id');
+const serviceGuides = {
+    income: {
+        title: 'Income Certificate Guide',
+        description: 'Step-by-step guidance for applying and preparing documents for an Income Certificate.',
+        intro: 'Income certificates are issued by Sachivalayam and help citizens access scholarships, loans, and social support programs.',
+        steps: [
+            'Collect Aadhaar, proof of income, and passport photographs.',
+            'Visit the local Sachivalayam office or use the MeeSeva portal.',
+            'Submit completed form and supporting documents.',
+            'Track your application and collect the certificate once issued.'
+        ],
+        tips: [
+            'Confirm the required documents before you arrive.',
+            'Keep photocopies and originals ready.',
+            'Ask for an acknowledgement receipt after submission.'
+        ]
+    },
+    caste: {
+        title: 'Caste Certificate Guide',
+        description: 'Guidance for obtaining a Caste Certificate through Sachivalayam or MeeSeva.',
+        intro: 'Caste certificates are required for reservations, scholarships, and government benefits.',
+        steps: [
+            'Gather Aadhaar, community proof, and photographs.',
+            'Apply through the local Sachivalayam office or online portal.',
+            'Submit documentation and wait for verification.',
+            'Collect the certificate or download the approved copy.'
+        ],
+        tips: [
+            'Check the eligibility requirements for your category.',
+            'Verify contact details on the application.',
+            'Keep copies of all submitted documents.'
+        ]
+    },
+    birth: {
+        title: 'Birth Certificate Guide',
+        description: 'How to obtain a birth certificate for your child or update records.',
+        intro: 'Birth certificates are essential identity documents for school registration and official records.',
+        steps: [
+            'Collect hospital or birth proof and parent identification.',
+            'Visit Sachivalayam or use the online application form.',
+            'Submit the certificate application with required documents.',
+            'Receive the certificate after verification.'
+        ],
+        tips: [
+            'Keep birth proof documents ready when applying.',
+            'Use the correct child and parent names.',
+            'Request an acknowledgement slip for tracking.'
+        ]
+    },
+    death: {
+        title: 'Death Certificate Guide',
+        description: 'Guidance for applying for a death certificate through authorities.',
+        intro: 'A death certificate is required for legal, insurance, and pension-related formalities.',
+        steps: [
+            'Gather medical and identity documents.',
+            'Visit Sachivalayam or the concerned office with supporting evidence.',
+            'Submit the application for verification.',
+            'Collect the issued certificate once approved.'
+        ],
+        tips: [
+            'Prepare the hospital or medical certificate.',
+            'Keep family identity proofs ready.',
+            'Keep a copy of the application receipt.'
+        ]
+    },
+    residence: {
+        title: 'Residence Certificate Guide',
+        description: 'How to apply for a residence certificate for proof of local address.',
+        intro: 'Residence certificates are often required for government applications and local services.',
+        steps: [
+            'Collect address proof, Aadhaar, and photographs.',
+            'Submit the application at Sachivalayam or online portal.',
+            'Provide landlord or residential proof if required.',
+            'Receive the certificate after verification.'
+        ],
+        tips: [
+            'Keep all proof documents up to date.',
+            'Confirm the local address requirements.',
+            'Carry both originals and copies.'
+        ]
+    },
+    ration: {
+        title: 'Ration Card Guide',
+        description: 'Guidance for applying for a ration card through Sachivalayam services.',
+        intro: 'Ration cards provide access to essential commodities and welfare programs.',
+        steps: [
+            'Collect identity and residence proof documents.',
+            'Apply through Sachivalayam or MeeSeva portal.',
+            'Submit the required documents and verify details.',
+            'Receive the ration card after approval.'
+        ],
+        tips: [
+            'Verify family details carefully before submission.',
+            'Carry proof of residence and identity.',
+            'Keep the acknowledgement number for tracking.'
+        ]
+    },
+    aadhaar: {
+        title: 'Aadhaar Update Guide',
+        description: 'Steps to update Aadhaar details and documents at Sachivalayam centers.',
+        intro: 'Aadhaar updates are required when personal information changes or must be corrected.',
+        steps: [
+            'Collect documents that support your Aadhaar update request.',
+            'Visit the Aadhaar update center or use the online portal.',
+            'Submit the request and pay any applicable fee.',
+            'Collect the update receipt and track the status.'
+        ],
+        tips: [
+            'Ensure documents match the new Aadhaar details.',
+            'Keep a transcript of the acknowledgement number.',
+            'Follow up if the status does not update in time.'
+        ]
+    },
+    pension: {
+        title: 'Pension Service Guide',
+        description: 'Assistance for applying for pension schemes and benefits.',
+        intro: 'Pension services help retired citizens access government support and payouts.',
+        steps: [
+            'Collect proof of age, identity, and pension eligibility.',
+            'Apply through the local Sachivalayam office or online portal.',
+            'Submit all supporting documents and complete verification.',
+            'Track your application until pension approval.'
+        ],
+        tips: [
+            'Confirm eligibility requirements for the selected scheme.',
+            'Keep accurate income and identity documents.',
+            'Ask for help if you have difficulty with forms.'
+        ]
+    },
+    marriage: {
+        title: 'Marriage Certificate Guide',
+        description: 'Guidance for applying for a marriage certificate with Sachivalayam.',
+        intro: 'Marriage certificates are required for legal proof of marriage and related services.',
+        steps: [
+            'Collect marriage proof, identity documents, and photographs.',
+            'Submit the application at Sachivalayam or relevant office.',
+            'Provide witnesses or supporting proof if needed.',
+            'Collect the certificate after approval.'
+        ],
+        tips: [
+            'Carry valid identity documents for both spouses.',
+            'Ensure marriage details are accurate on forms.',
+            'Keep a copy of the receipt for tracking.'
+        ]
+    },
+    land: {
+        title: 'Land Records Guide',
+        description: 'How to access land records and property documents for local services.',
+        intro: 'Land record services help citizens verify ownership and property details.',
+        steps: [
+            'Gather property proof and identity documents.',
+            'Visit the land records office or use the online portal.',
+            'Submit required documents and request the record update.',
+            'Collect the certified land record copy.'
+        ],
+        tips: [
+            'Check the exact land reference details before applying.',
+            'Bring property tax or deed documents if available.',
+            'Keep copies of all submissions.'
+        ]
+    }
+};
+
+const guide = serviceGuides[serviceId];
+const guideTitle = document.getElementById('guideTitle');
+const guideDescription = document.getElementById('guideDescription');
+const guideIntro = document.getElementById('guideIntro');
+const guideSteps = document.getElementById('guideSteps');
+const guideTips = document.getElementById('guideTips');
+
+if (guide) {
+    guideTitle.textContent = guide.title;
+    guideDescription.textContent = guide.description;
+    guideIntro.textContent = guide.intro;
+    guideSteps.innerHTML = guide.steps.map(step => `<li>${step}</li>`).join('');
+    guideTips.innerHTML = guide.tips.map(tip => `<li>${tip}</li>`).join('');
+} else {
+    guideTitle.textContent = 'Guide Not Found';
+    guideDescription.textContent = 'The selected service guide is unavailable. Please return to the services page.';
+    guideSteps.innerHTML = '<li>Please go back to the <a href="services.html">Services page</a>.</li>';
+    guideTips.innerHTML = '';
+}
+</script>
+</body>
+</html>
