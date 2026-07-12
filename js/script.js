@@ -869,8 +869,6 @@ document.getElementById("searchForm");
         const keyword =
         searchInput.value.toLowerCase().trim();
 
-        console.log(keyword);
-
         searchResults.innerHTML = "";
 
         if (keyword.length === 0) {
