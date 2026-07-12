@@ -617,6 +617,22 @@ if(service && service.theme){
     document.body.classList.add(`theme-${service.theme}`);
 }
 
+const documentImageMap = {
+    "Aadhaar Card": "images/aadhar.png",
+    "Ration Card": "images/ration.png",
+    "Passport Photo": "images/passport.png",
+    "Community Proof": "images/community.png",
+    "Hospital Record": "images/hospital.png",
+    "Parents Aadhaar": "images/aadhar.png",
+    "Address Proof": "images/address.png",
+    "Bank Passbook": "images/bank.png",
+    "Income Certificate": "images/incomecert.png",
+    "Survey Number": "images/survey.png",
+    "Marriage Proof": "images/marriage.png",
+    "Death Report": "images/dreport.png",
+    "Electricity Bill": "images/electricity.png"
+};
+
 if(service){ 
 
     const applyBtn = document.getElementById("applyBtn");
@@ -643,6 +659,8 @@ service.title;
 const isChecked =
 localStorage.getItem(checkboxId) === "true";
 
+const docImage = documentImageMap[doc] || "images/aadhar.png";
+
 docsHTML += `
 <li class="doc-item doc-${service.theme}">
     <input
@@ -651,7 +669,12 @@ docsHTML += `
         ${isChecked ? "checked" : ""}
     >
 
-    <span class="document-link">${doc}</span>
+    <a
+        href="document-viewer.html?image=${encodeURIComponent(docImage)}&title=${encodeURIComponent(doc)}&service=${serviceId}"
+        class="document-link"
+    >
+        ${doc}
+    </a>
 
 </li>
 `;
