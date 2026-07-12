@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about Sachivalayam services, documents, application procedures, and support." />
     <title>FAQ</title>
 
     <!-- CSS -->
@@ -14,13 +15,14 @@
 <header>
     <h1>Sachivalayam Citizen Service Guide</h1>
 
-    <nav>
+    <nav aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
+<main>
 
 <section class="faq-section">
 
@@ -52,15 +54,20 @@
 
 </div>
 
-    <input
-        type="text"
-        id="faqSearch"
-        placeholder="Search FAQs..."
-    >
+    <div class="faq-search" role="search">
+        <label class="sr-only" for="faqSearch">Search FAQs</label>
+        <input
+            type="text"
+            id="faqSearch"
+            class="faq-search-input"
+            placeholder="Search FAQs..."
+            aria-label="Search FAQs"
+        >
+    </div>
 
-    <div id="faqContainer"></div>
+    <div id="faqContainer" aria-live="polite"></div>
 
-    <div class="faq-help-box">
+    <div class="faq-help-box" role="contentinfo">
 
     <h3>Still Need Help?</h3>
 
@@ -69,12 +76,13 @@
         please contact the Sachivalayam help desk.
     </p>
 
-    <a href="contact.html" class="faq-contact-btn">
+    <a href="contact.html" class="faq-contact-btn" aria-label="Contact support">
         Contact Support
     </a>
 
 </div>
 </section>
+</main>
 
 <!-- JavaScript -->
 <script type="module" src="js/script.js"></script>
