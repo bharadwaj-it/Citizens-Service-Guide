@@ -15,7 +15,7 @@
 
     <h1>Sachivalayam Citizen Service Guide</h1>
 
-    <nav>
+    <nav aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="faq.html">FAQ</a>
@@ -23,6 +23,7 @@
     </nav>
 
 </header>
+<main>
 
 <!-- HERO SECTION -->
 
@@ -34,13 +35,13 @@
             Find Government Services Easily
         </h2>
 
-        <div class="hero-description-box">
+        <p class="hero-description-box">
             Check eligibility, required documents,
             application process and timelines before
             visiting Sachivalayam.
-        </div>
+        </p>
 
-        <div class="search-box">
+        <form id="searchForm" class="search-box" role="search">
 
             <input
                 type="text"
@@ -49,19 +50,19 @@
                 placeholder="Search for a service..."
             >
 
-            <button id="searchBtn" aria-label="Search services">
+            <button id="searchBtn" type="button" aria-label="Search services">
                 Search
             </button>
 
-        </div>
+        </form>
 
-        <div id="suggestions"></div>
+        <ul id="suggestions" aria-live="polite" role="listbox"></ul>
 
         <div class="search-tip-box">
             Start typing a service name or press Enter to search.
         </div>
 
-        <div id="searchResults"></div>
+        <div id="searchResults" aria-live="polite"></div>
 
     </div>
 
@@ -72,7 +73,7 @@
 
 <!-- POPULAR SERVICES -->
 
-<section class="popular-section">
+<section class="popular-section" id="popular-services">
 
     <div class="popular-container">
 
@@ -167,7 +168,7 @@
 
 </section>
 
-<section class="guide-highlights">
+<section class="guide-highlights" id="guide-highlights">
 
     <h2>Citizen Guide Highlights</h2>
 
@@ -196,48 +197,28 @@
     </div>
 
 </section>
-<section class="common-documents">
+<section class="common-documents" id="common-documents">
 
     <h2>Frequently Used Documents</h2>
 
     <div class="document-grid">
 
-        <div class="document-card">
-            🪪 Aadhaar Card
-        </div>
-
-        <div class="document-card">
-            🏦 Bank Passbook
-        </div>
-
-        <div class="document-card">
-            🏠 Address Proof
-        </div>
-
-        <div class="document-card">
-            📷 Passport Photos
-        </div>
-
-        <div class="document-card">
-            📄 Income Certificate
-        </div>
-
-        <div class="document-card">
-            🎓 Educational Certificates
-        </div>
-
+        <div class="document-card">🪪 Aadhaar Card</div>
+        <div class="document-card">🏦 Bank Passbook</div>
+        <div class="document-card">🏠 Address Proof</div>
+        <div class="document-card">📷 Passport Photos</div>
+        <div class="document-card">📄 Income Certificate</div>
+        <div class="document-card">🎓 Educational Certificates</div>
         <div class="document-card">📄 Ration Card</div>
+        <div class="document-card">⚡ Electricity Bill</div>
+        <div class="document-card">🏠 Birth Certificate</div>
+        <div class="document-card">📑 Caste Certificate</div>
 
-<div class="document-card">⚡ Electricity Bill</div>
-
-<div class="document-card">🏠 Birth Certificate</div>
-
-<div class="document-card">📑 Caste Certificate</div>
     </div>
 
 </section>
 
-<section class="visit-tips">
+<section class="visit-tips" id="visit-tips">
     <h2>Before Visiting Sachivalayam</h2>
 
     <div class="tips-grid">
@@ -268,7 +249,7 @@
 
     </div>
 </section>
-<section class="faq-preview">
+<section class="faq-preview" id="faq-preview">
 
     <h2>Frequently Asked Questions</h2>
 
@@ -315,6 +296,7 @@
     </p>
 
 </section>
+</main>
 
 <footer>
 
