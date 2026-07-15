@@ -914,6 +914,8 @@ document.addEventListener("change",(event)=>{
 
 setTimeout(updateProgress,100);
 
+const downloadBtn = document.getElementById("downloadBtn");
+
 if(downloadBtn){
 
     downloadBtn.addEventListener("click", () => {
